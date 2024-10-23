@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pembelajaran kewarganegaraan</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header style="display: flex; align-items: center">
+      <img
+        src="https://simari.ulm.ac.id/logo/ulm.png"
+        alt="logo"
+        width="100px"
+        style="margin-right: 20px"
+      />
+      <div>
+        <h1>Website Pembelajaran Kewarganegaraan</h1>
+        <p>Pembelajaran materi Kewarganegaraan</p>
+      </div>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#materi">Materi</a></li>
+        <li><a href="#games">Kuiz</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+
+    <section id="home" class="section">
+      <h2>Selamat Datang di Website Pembelajaran Kewarganegaraan!</h2>
+      <p>
+        Website ini dibuat khusus untuk Belajar tentang materi kewarganegaraan.
+        pilih materi dan tonton pembahasan video dibawah ini!
+      </p>
+      <img
+        src="https://th.bing.com/th/id/OIP.6x9WpXSQGsxebPMBwZGPCAHaD5?rs=1&pid=ImgDetMain"
+        alt="Belajar Sambil Bermain"
+        class="imgs"
+      />
+    </section>
+
+    <section id="materi" class="section">
+      <h2>Materi Pembelajaran</h2>
+      <div class="materi-container">
+        <div class="materi-card" onclick="showMateri('alphabet')">
+          <h3>perumusan pancasila sebagai dasar negara</h3>
+          <img
+            src="https://th.bing.com/th/id/OIP.dUixsmg2_6kRTxCvNzy0lwHaIB?w=164&h=180&c=7&r=0&o=5&dpr=2.2&pid=1.7"
+            alt="Belajar Alfabet"
+          />
+        </div>
+        <div class="materi-card" onclick="showMateri('numbers')">
+          <h3>sistem pemerintahan indonesia</h3>
+          <img
+            src="https://th.bing.com/th/id/OIP.dUixsmg2_6kRTxCvNzy0lwHaIB?w=164&h=180&c=7&r=0&o=5&dpr=2.2&pid=1.7"
+            alt="Belajar "
+          />
+        </div>
+        <div class="materi-card" onclick="showMateri('colors')">
+          <h3>politik luar negeri indonesia era globalisasi</h3>
+          <img
+            src="https://th.bing.com/th/id/OIP.dUixsmg2_6kRTxCvNzy0lwHaIB?w=164&h=180&c=7&r=0&o=5&dpr=2.2&pid=1.7"
+            alt="Belajar "
+          />
+        </div>
+      </div>
+
+      <div id="materi-display" class="materi-display">
+        <h3>Materi Pembelajaran</h3>
+        <p id="materi-content">
+          Pilih salah satu materi di atas untuk memulai belajar.
+        </p>
+      </div>
+    </section>
+
+    <section id="games" class="section">
+      <h2>Sesi Quiz</h2>
+      <button class="btn" id="btns">Klik Quiz</button>
+    </section>
+    <script>
+      document.getElementById("btns").addEventListener("click", function () {
+        var confirmation = confirm("apakah anda siap untuk mengerjakan quiz?");
+        if (confirmation) {
+          window.location.href = "home.html";
+        }
+      });
+    </script>
+
+    <section id="kontak" class="section">
+      <h2>Kontak Kami</h2>
+      <p>
+        Hubungi kami jika anda mempunyai pertanyaan ke
+        <a href="mailto:munamanis31@gmail.com">pgsdmunaw@gmail.com</a>
+      </p>
+    </section>
+
+    <footer>
+      <div class="footer-container">
+        <h1>creator</h1>
+        <div class="profile">
+          <img src="una.png" alt="una" class="profile-pic" />
+          <h3>Munawarah</h3>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      /* Global Styles */
+      body {
+        font-family: "Comic Sans MS", sans-serif;
+        background-color: #f0f8ff;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+      .btn {
+        width: 200px;
+        background-color: #ffcc00;
+      }
+      .btn:hover {
+        background-color: aqua;
+        color: black;
+      }
+
+      header {
+        background-color: #ffcc00;
+        text-align: center;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 3em;
+        color: #0066cc;
+      }
+
+      header p {
+        font-size: 1.2em;
+        margin-top: 10px;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        background-color: #3399ff;
+        overflow: hidden;
+        text-align: center;
+      }
+
+      nav ul li {
+        display: inline;
+        padding: 15px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2em;
+      }
+
+      nav ul li a:hover {
+        background-color: #ffcc00;
+        color: #0066cc;
+      }
+      .imgs {
+        width: 300px;
+      }
+
+      /* Sections */
+      .section {
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      h2 {
+        color: #0066cc;
+      }
+
+      /* Materi Section */
+      .materi-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+
+      .materi-card {
+        background-color: #fff;
+        border: 2px solid #0066cc;
+        border-radius: 10px;
+        width: 150px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+
+      .materi-card:hover {
+        transform: scale(1.05);
+      }
+
+      .materi-card img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .materi-display {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #e6f7ff;
+        border: 2px solid #0066cc;
+        border-radius: 10px;
+      }
+
+      #materi-content {
+        font-size: 1.2em;
+        color: #333;
+      }
+
+      #materi-display video {
+        width: 100%;
+        max-width: 600px;
+        margin-top: 20px;
+        border-radius: 10px;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #504c4c;
+        color: #fff;
+        padding: 40px 0;
+        text-align: center;
+      }
+
+      .footer-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .profile {
+        text-align: center;
+      }
+
+      .profile-pic {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        border: 3px solid #ffcc00;
+      }
+
+      h3 {
+        font-size: 1.2em;
+        margin-top: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .footer-container {
+          flex-direction: column;
+          gap: 30px;
+        }
+        header {
+          flex-direction: column; /* Ubah layout dari horizontal ke vertikal */
+          text-align: center; /* Teks dan logo di tengah pada layar kecil */
+        }
+
+        header img.logo {
+          width: 80px; /* Perkecil ukuran logo untuk layar kecil */
+          margin-right: 0; /* Hapus jarak kanan karena layout sudah vertikal */
+          margin-bottom: 10px; /* Tambahkan jarak bawah antara logo dan teks */
+        }
+
+        header h1 {
+          font-size: 2em; /* Perkecil ukuran heading agar lebih proporsional */
+        }
+
+        header p {
+          font-size: 1em; /* Perkecil ukuran teks paragraf */
+        }
+      }
+    </style>
+    <script>
+      function showMateri(materi) {
+        let materiContent = "";
+
+        if (materi === "alphabet") {
+          materiContent = `
+              <h4>perumusan pancasila sebagai dasar negara</h4>
+               <a href="pdf.pdf" download>download buku</a>
+              <p>Video ini akan membantu kamu belajar proses perumusan pancasila sebagai dasar negara !</p>
+              <video controls>
+                  <source src="rumus.mp4" type="video/mp4">
+                  Browser kamu tidak mendukung pemutaran video.
+                 
+              </video>
+              <p> sumber yt : https://youtu.be/kaPdk3kwx8g?si=LzwAUxiNPKo7uQcW</p>
+          `;
+        } else if (materi === "numbers") {
+          materiContent = `
+              <h4>sistem pemerintahan indonesia</h4>
+                <a href="pdf.pdf" download>download buku</a>
+              <p>Video ini akan membantu kamu belajar sistem pemerintahan indonesia !</p>
+              <video controls>
+                  <source src="sistem.mp4" type="video/mp4">
+                  Browser kamu tidak mendukung pemutaran video.
+              </video>
+               <p> sumber yt :  https://www.youtube.com/watch?v=POAkTUhnPU4</p>
+             
+          `;
+        } else if (materi === "colors") {
+          materiContent = `
+              <h4>politik luar negeri indonesis era globalisasi</h4>
+                <a href="pdf.pdf" download>download buku</a>
+              <p>Video ini akan membantu kamu belajar politik luar negeri indonesia era globalisasi !</p>
+              <video controls>
+                  <source src="peran.mp4" type="video/mp4">
+                  Browser kamu tidak mendukung pemutaran video.
+              </video>
+              <p> sumber yt : https://www.youtube.com/watch?v=6czjGkKXcrI</p>
+          `;
+        }
+
+        document.getElementById("materi-content").innerHTML = materiContent;
+      }
+    </script>
+  </body>
+</html>
